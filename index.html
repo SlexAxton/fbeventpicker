@@ -7,18 +7,35 @@
 <body>
 facebook event picker
 
+<input id="fbep-pull" type="button" value="Pull My Facebook Events" />
+<div id="fbep-container">
+  
+  <ul id="fbep-eventlist">
+  
+  </ul>
+  
+  <input type="button" id="fbep-toCSV" value="Output as CSV" /><br />
+  <textarea id="fbep-CSVoutput" row="40" col="200" style="width:800px;height:100px;"></textarea>
+</div>
+
+
 <div id="fb-root"></div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 <script src="js/fbeventpicker.js"></script>
 <script>
   window.fbAsyncInit = function() {
     FB.init({
-      appId: '331180801131',
+      appId: '131096923589751',
       status: true,
       cookie: true,
       xfbml: false
     });
-    window.fbeventpicker.init(FB);
+    jQuery(function(){
+      $('#fbep-pull').click(function(){
+        window.fbeventpicker.init(FB);
+        return false;
+      });
+    });
   };
   (function(d) {
     var e   = d.createElement('script');
