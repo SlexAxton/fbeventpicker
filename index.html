@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8 />
+<title>Facebook Event Picker</title>
+</head>
+<body>
+facebook event picker
+
+<div id="fb-root"></div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script src="js/fbeventpicker.js"></script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId: '331180801131',
+      status: true,
+      cookie: true,
+      xfbml: false
+    });
+    window.fbeventpicker.init(FB);
+  };
+  (function(d) {
+    var e   = d.createElement('script');
+    e.async = true;
+    e.src   = d.location.protocol + '//connect.facebook.net/en_US/all.js';
+    d.getElementById('fb-root').appendChild(e);
+  }(document));
+</script>
+</body>
+</html>
